@@ -39,3 +39,20 @@ tableView_customers->setSelectionBehavior(QAbstractItemView::SelectRows);
 tablwView_customers->setSelectionMode(QAbstractItemView::SingleSelection)
 
 
+/**************************
+SEGNALI
+***************************/
+
+// Intercetto il segnale che viene emesso nel momento in cui la riga correntemente selezionata viene cambiata e lo
+// redireziono su uno slot, che si occuperà di gestire l'evento. Lo slot sarà definito nella classe in cui questo
+// codice è scritto (this)
+
+QObject::connect(
+  tableView_customers->selectionMode(), // Oggetto che genererà il segnale
+  SIGNAL(currentRowChanged(QModelIndex, QModelIndex)), // segnale emesso 
+  this, // oggetto in cui lo slot è istanziato
+  SLOT(currentCustomerRowChanged(QModelIndex, QModel, index))  // slot dell'oggetto this
+);
+
+
+
