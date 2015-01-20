@@ -3,7 +3,7 @@ MODELLO
 ***************************/
 
 // Ottengo un reference ad un database precedentmente "configurato"
-QSqlDatabase db = QSqlDatabase::database("Database precedentemente inizializzato, false);
+QSqlDatabase db = QSqlDatabase::database("Database precedentemente inizializzato", false);
 
 // Creo un modello per poter accedere ai dati del database in sola lettura
 QSqlQueryModel *model = new QSqlQueryModel();
