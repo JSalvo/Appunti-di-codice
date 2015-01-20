@@ -3,6 +3,7 @@ MODELLO
 ***************************/
 
 // Ottengo un reference ad un database precedentmente "configurato"
+// il parametro false, indica che se non vi è connessione al db, non si tenterà di stabilirla automaticamente
 QSqlDatabase db = QSqlDatabase::database("Database precedentemente inizializzato", false);
 
 // Creo un modello per poter accedere ai dati del database in sola lettura
